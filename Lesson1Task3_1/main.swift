@@ -8,10 +8,59 @@
 
 import Foundation
 var a :  String
-var b : Double
-var c : Double
-var i : Int
-var result : Double
+func counter(Arr: [String]) -> [String]{
+    var Arr = Arr
+    var b : Double
+    var c : Double
+    var i : Int
+    var result : Double
+    while Arr.count != 1 {
+        
+        if Arr.index(of: "*") != nil{
+            i = Arr.index(of: "*")!
+            b = Double(Arr[i - 1])!
+            c = Double(Arr[i + 1])!
+            result = b*c
+            Arr[i - 1] = String(result)
+            Arr.remove(at: i)
+            Arr.remove(at: i)
+            
+        }
+        else if Arr.index(of: "/") != nil{
+            i = Arr.index(of: "/")!
+            b = Double(Arr[i - 1])!
+            c = Double(Arr[i + 1])!
+            result = b/c
+            Arr[i - 1] = String(result)
+            Arr.remove(at: i)
+            Arr.remove(at: i)
+            
+        }
+        else if Arr.index(of: "+") != nil{
+            i = Arr.index(of: "+")!
+            b = Double(Arr[i - 1])!
+            c = Double(Arr[i + 1])!
+            result = b+c
+            Arr[i - 1] = String(result)
+            Arr.remove(at: i)
+            Arr.remove(at: i)
+            
+        }
+        else if Arr.index(of: "-") != nil{
+            i = Arr.index(of: "-")!
+            b = Double(Arr[i - 1])!
+            c = Double(Arr[i + 1])!
+            result = b-c
+            Arr[i - 1] = String(result)
+            Arr.remove(at: i)
+            Arr.remove(at: i)
+            
+        }
+        
+        
+    }
+    return Arr
+}
 
 
 print(" Введите уравнение в формате \n x + y * z ")
@@ -21,51 +70,5 @@ if a.contains("("){
 }
 else{
 var Arr = a.components(separatedBy: " ")
-
-while Arr.count != 1 {
-    
-    if Arr.index(of: "*") != nil{
-        i = Arr.index(of: "*")!
-        b = Double(Arr[i - 1])!
-        c = Double(Arr[i + 1])!
-        result = b*c
-        Arr[i - 1] = String(result)
-        Arr.remove(at: i)
-        Arr.remove(at: i)
-        
-    }
-    else if Arr.index(of: "/") != nil{
-        i = Arr.index(of: "/")!
-        b = Double(Arr[i - 1])!
-        c = Double(Arr[i + 1])!
-        result = b/c
-        Arr[i - 1] = String(result)
-        Arr.remove(at: i)
-        Arr.remove(at: i)
-        
-    }
-    else if Arr.index(of: "+") != nil{
-        i = Arr.index(of: "+")!
-        b = Double(Arr[i - 1])!
-        c = Double(Arr[i + 1])!
-        result = b+c
-        Arr[i - 1] = String(result)
-        Arr.remove(at: i)
-        Arr.remove(at: i)
-        
-    }
-    else if Arr.index(of: "-") != nil{
-        i = Arr.index(of: "-")!
-        b = Double(Arr[i - 1])!
-        c = Double(Arr[i + 1])!
-        result = b-c
-        Arr[i - 1] = String(result)
-        Arr.remove(at: i)
-        Arr.remove(at: i)
-        
-    }
-    
-    
-}
-print(Arr)
+print(counter(Arr: Arr))
 }
