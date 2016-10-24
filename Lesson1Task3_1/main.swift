@@ -8,7 +8,7 @@
 
 import Foundation
 var a :  String
-func counter(Arr: [String]) -> [String]{
+func counter(Array Arr: [String]) -> [String]{
     var Arr = Arr
     var b : Double
     var c : Double
@@ -70,5 +70,5 @@ if a.contains("("){
 }
 else{
 var Arr = a.components(separatedBy: " ")
-print(counter(Arr: Arr))
+print(counter(Array: Arr))
 }
